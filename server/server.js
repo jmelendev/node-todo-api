@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 const _ = require('lodash');
 
+var config = require('./config/config');
 var {mongoose} = require('./db/mongoose');
 
 //models
@@ -104,7 +105,7 @@ app.patch('/todos/:id', (req, res) => {
   }).catch((e) => {
     res.status(400).send();
   });
-  
+
 });
 
 //listen for express app
